@@ -283,7 +283,7 @@ export const CollageStudio: React.FC<CollageStudioProps> = ({
   };
 
   return (
-    <div className="flex-1 flex flex-col md:flex-row h-[calc(100vh-64px)] overflow-hidden bg-slate-100 dark:bg-slate-950">
+    <div className="flex-1 flex flex-col-reverse md:flex-row h-[calc(100vh-64px)] overflow-hidden bg-slate-100 dark:bg-slate-950">
       {/* Hidden file input */}
       <input
         ref={fileInputRef}
@@ -294,7 +294,7 @@ export const CollageStudio: React.FC<CollageStudioProps> = ({
       />
 
       {/* Left Control Sidebar */}
-      <div className="w-full md:w-80 lg:w-96 border-r border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-4 space-y-5 overflow-y-auto shrink-0">
+      <div className="w-full md:w-80 lg:w-96 border-t md:border-t-0 md:border-r border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-4 space-y-4 overflow-y-auto shrink-0 h-[46vh] md:h-full">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Layers className="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -448,14 +448,14 @@ export const CollageStudio: React.FC<CollageStudioProps> = ({
       </div>
 
       {/* Center Interactive Collage Preview Board */}
-      <div className="flex-1 flex items-center justify-center p-6 overflow-auto checkerboard-pattern">
+      <div className="flex-1 min-h-[36vh] md:min-h-0 flex items-center justify-center p-3 sm:p-6 overflow-auto checkerboard-pattern">
         <div
           style={{
             backgroundColor: bgColor,
             padding: `${padding}px`,
             gap: `${spacing}px`,
           }}
-          className="relative max-w-2xl w-full aspect-square shadow-2xl rounded-2xl overflow-hidden transition-all flex flex-col"
+          className="relative max-w-2xl max-h-[36vh] md:max-h-none w-full aspect-square shadow-2xl rounded-2xl overflow-hidden transition-all flex flex-col"
         >
           {/* 2 Photos Vertical */}
           {template === '2-vert' && (

@@ -158,7 +158,7 @@ export const CanvasWorkspace: React.FC = () => {
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
-      className={`relative flex-1 h-full overflow-hidden flex items-center justify-center select-none bg-slate-200/50 dark:bg-slate-950/80 checkerboard-pattern ${
+      className={`relative flex-1 min-h-[36vh] md:min-h-0 h-full overflow-hidden flex items-center justify-center select-none bg-slate-200/50 dark:bg-slate-950/80 checkerboard-pattern ${
         isPanning ? 'cursor-grab active:cursor-grabbing' : ''
       }`}
     >
@@ -174,7 +174,7 @@ export const CanvasWorkspace: React.FC = () => {
         {/* Main Canvas (Rendered with active DIP/Adjustments pipeline) */}
         <canvas
           ref={canvasRef}
-          className="max-h-[75vh] max-w-[70vw] block mx-auto object-contain pointer-events-auto"
+          className="max-h-[40vh] md:max-h-[75vh] max-w-[94vw] md:max-w-[70vw] block mx-auto object-contain pointer-events-auto"
         />
 
         {/* Before / After Split Comparison Overlay */}
@@ -188,7 +188,7 @@ export const CanvasWorkspace: React.FC = () => {
               <img
                 src={originalImage.src}
                 alt="Original"
-                className="max-h-[75vh] max-w-[70vw] object-contain block"
+                className="max-h-[40vh] md:max-h-[75vh] max-w-[94vw] md:max-w-[70vw] object-contain block"
                 style={{
                   width: canvasRef.current.offsetWidth || 'auto',
                   height: canvasRef.current.offsetHeight || 'auto',

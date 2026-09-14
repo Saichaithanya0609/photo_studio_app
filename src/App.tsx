@@ -46,7 +46,7 @@ const MainApp: React.FC = () => {
       {/* Main Workspace based on current tab */}
       <main className="flex-1 flex overflow-hidden">
         {currentView === 'editor' && (
-          <div className="flex-1 flex flex-col md:flex-row h-[calc(100vh-64px)] overflow-hidden">
+          <div className="flex-1 flex flex-col-reverse md:flex-row h-[calc(100vh-64px)] overflow-hidden">
             <EditorSidebar onOpenUpscale={() => setIsUpscaleOpen(true)} />
             <CanvasWorkspace />
           </div>
