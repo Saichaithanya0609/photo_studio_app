@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
 @layer base {
   :root {
     --color-bg-primary: #f8fafc;
@@ -10,7 +12,7 @@
     --color-border: #e2e8f0;
   }
 
-  .dark {
+  .dark, [data-theme="dark"] {
     --color-bg-primary: #090d16;
     --color-bg-secondary: #111827;
     --color-bg-tertiary: #1f2937;
