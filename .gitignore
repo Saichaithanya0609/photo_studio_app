@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Sub-projects
+3-D_website/
+Game_Zone/
+project/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

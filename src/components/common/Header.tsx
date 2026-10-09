@@ -24,6 +24,7 @@ interface HeaderProps {
   setCurrentView: (view: 'editor' | 'collage' | 'feed') => void;
   onOpenExport: () => void;
   onOpenPublish: () => void;
+  onReturnToStudio?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -31,6 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
   setCurrentView,
   onOpenExport,
   onOpenPublish,
+  onReturnToStudio,
 }) => {
   const { theme, toggleTheme } = useTheme();
   const {
@@ -220,6 +222,16 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Right Controls: Theme Toggle & Actions */}
       <div className="flex items-center gap-1.5 sm:gap-2.5">
+        {onReturnToStudio && (
+          <button
+            onClick={onReturnToStudio}
+            title="Return to Studio Website"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-300 text-xs font-mono font-medium transition shadow-xs"
+          >
+            <span>← Studio Site</span>
+          </button>
+        )}
+
         {/* Dark / Light Mode Switcher */}
         <button
           onClick={toggleTheme}
